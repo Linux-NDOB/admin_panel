@@ -1,0 +1,94 @@
+
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+
+    <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Listado de Hoteles</h5>
+        <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">En esta seccion podra ver todos los hoteles registrados y sus datos, como el nombre, NIT, ciudad... </p>
+    </div>
+    <br>
+
+<h1 class="text-center text-xl font-black mx-8">Hoteles registrados</h1>
+<br>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Hotel
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        NIT
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Ciudad
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Direccion
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        #Habitaciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Hotel X
+                    </th>
+                    <td class="px-6 py-4">
+                        12345
+                    </td>
+                    <td class="px-6 py-4">
+                        Lorica
+                    </td>
+                    <td class="px-6 py-4">
+                        Calle X
+                    </td>
+                    <td class="px-6 py-4">
+                        60
+                    </td>
+                    
+                </tr>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Hotel Y
+                    </th>
+                    <td class="px-6 py-4">
+                        6789
+                    </td>
+                    <td class="px-6 py-4">
+                        Monteria
+                    </td>
+                    <td class="px-6 py-4">
+                        Calle Z
+                    </td>
+                    <td class="px-6 py-4">
+                        80
+                    </td> 
+                </tr>
+                <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Hotel Z
+                    </th>
+                    <td class="px-6 py-4">
+                        101112
+                    </td>
+                    <td class="px-6 py-4">
+                        Barranquilla
+                    </td>
+                    <td class="px-6 py-4">
+                        CalleZ
+                    </td>
+                    <td class="px-6 py-4">
+                        100
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</Layout>

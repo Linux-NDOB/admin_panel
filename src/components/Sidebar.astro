@@ -1,0 +1,150 @@
+---
+import Footer from '../components/Footer.astro';
+---
+<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-start">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+              </svg>
+           </button>
+          <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
+            <img src="https://ps.w.org/adminify/assets/icon.svg?rev=2607826" class="h-8 mr-3" alt="FlowBite Logo" />
+            <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Admin Panel</span>
+          </a>
+        </div>
+        <div class="flex items-center">
+            <div class="flex items-center ml-3">
+              <div>
+                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                  <span class="sr-only">Open user menu</span>
+                  <img class="w-8 h-8 rounded-full" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAtFBMVEX///8CiNEptvaz5fwDm+Xm8voAhtAAmeQAgc8AhNAAl+QAgM4ltfYquPcAfs4AsfW66f3y9/sOoekVpuwwktQerfDU7/3L6vyV1/qVx+ni8PkJjtYTmN682/Cn3Po+u/d6zfmAz/mu5PtMte08rOqx4Ptqyfhjrd5BmtdOpdxPwPdfxfjj9P6/5vuJ0/nN7Pxbuu5wwvB3tOCJv+XH4PO22O9sseAyl9amzut9u+SRw+dFodq2vgEUAAAJmElEQVR4nO2caXuiPBSGS0UWgSqgjpbRurRuXaZ2bLXt//9fbwhQkZwgxJbEefN8mLkcxcntSc6WwMWFlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJTU/0z1X8Px/eom1Op+PPxV5z2gb5Vbm102m017L/Tqcnb3j1C6w3sEd0kKYa6G5w/ZHTkgXgJ5OeryHuJJerjPwUsgV+fLWB8d5YsYZw+8h8qmoV2EDzPaQ96DZVD9vlmQL1RzdXZmfCxswMSMNd5DLqdeGQPGZnziPegyGpUHRIgz3sMurhkLIEK85z3woirlYw4QV7yHXkyMFsSIZzFRn9gBEeKY9/CP6+4UQIQofOzv0gEdpxCi6FnqDTXQ251OEfPaNy5vhlxRFqHj2L6K5EX8TU/1fJtiUrGX4h8KYMfTVSwvfNnR8SufYu7mL94YOVpBg3ZsT48BVb2DzKkmL2BGW+CoCPtRW034sBU9L/WyAxrxjjcIVQ5oEz8xWUSmf/0R/g02cC55g9A0BE3ofPFNU5ZspBcmYURRgyIcKSLChrcetp5jLP25Nk4YwXl9wxsF1i+KI/VCkPGkVasNGzqWOqm1JutoPYLXNB95w4CaUbx/BxnNm9SQWlP/9tZXG+tW+KKnh+4UvMQWMgN3wUiBwnpoqwiq1sLCtLVozlJ+FVvETjEUKlCmFiUzsRHTGmKHSslshAwY5CR1/H108LOErSl+w0NWBiCFnKbkfNuHdv2WMGGth+Oj7qGfAFiMTd44pMiyqbMHJCwYGnHc2MdHkvAPbyBCZLj340iPNCQBQ1ezRySsKGDQH2VnaRQH1fWz1xi3IMJazYuiI2REARcikdDY0QL8ig6AnlR/GgV+PTsDBExriJXUwYRrivkiTRB/5FM7WYdqi1bqPxCuNLJNLw8Qa9QAF6It2lZNlyCMXMhRwFpPB2sM4TpSZP8iDhOt3GkazlQ4XgjXyyALi2iWqrdrqqPBarUiwuwcEJ/QiQK+rjeecvCe1lMPDhfCFVBAcRjnNPqaTjjUG3E8JEP+GRBexmXFM30l9pLEziMclXCzFOyUOr6Ogz6VMIoUuge0FYUjJOMhnqjY2VBdTes2amRANaJw0aJOJVTprmaCi0cPLIKFi/hk1pYA6iqVENdPug8T8gYiBDT0bRwRfbB0whr6+BNQ41vAzHtMEvpqvp9BmkaIpBUFrJ6ARlQUy3Nzb+xrdKDxLWAF/EAh1D1MQpuncMomoCu9gFxNnLdNEd70dpiBHIUxZOLrFELxHA3QxkimaWPU81B6up58MbYmI7XhI+YoHupkvBBwGV5cPBLTNNkLjXoxDe85XpLD53BbBkWRadyKIj2NkB1hF9g93DcUozIDW7EXZ9tJEwrauxCuh4EFxAvHV9PSMeFT4+AfVSDiCzlJKUdpvDSg1/rKZPbbwNAeqXBpdyzonILt6bhtj6O/N5mgmn4UBZHEvACgsGcVSF8TTlS7g7MyXGZ4oRLn0kHougdtPgnpZ7Ao29xOQqge9Lgdp9MBN9dshzcIVaARk2EfuJw4AlI2DwU+8n2fc3w97VbBcuLrtxB1FYaCK/1YXsqEOR8TMiXdK/eMvp8wwjVvAij4mX3wZFtK4a15+R8Qr/Q9FNyvKaGmcP2ZrCjnhgoDCuxHE8Gn24oC9ngPv4hOOKwv9vngvZjuCcKAYpYUgMaMdwWNeA+8uBhuXRM/EB7qrtD9sWnZ4hYUsLpOOTPajtC5GqhitzknBpwJ2Zg5osfCZmw6om34FpTbK3i3+tM5GjCSO7aPQKL3xyKeBy6ueu8m96kRN73z5sN6HF1Cj/6ww4diPJ7v/DxUt7eym0lpGD+9ZdUTtClaRu5e9YfacDzDT+BZrWZPd3/c9Lu8B8qg603/ZbltK6ZhXYXymtETeFI2bKr4HcswlfZ2+dLfXPMedGF1d8u2ZpmmhqRgab+hxozzW4nfRjJNS2vPd2eQ2GxeAtNIyBJp8F0VnezHNMMM3oVendd/A8vMDBsLjhUO8EnNtNofos7XzdIA8UIbwoiUT5vmfMMbBtBmYcADDscMN0h96gWmuRCN8XphUYcbCrzrK8i5RLM+RfI67ks+H+xM6SaMrjHehImTr20zd6ywEe3g2DVm8MobLdIbfQHmGfGICSMzznnDIV0XMGA4WGI/7agJQ5kB98gxyEZ3mrJGLGBC/MtonGdqv8AMjYd6aMRcR3pwnfHBE/CvVZBPyRjRKWjCUNb7eQBmjKgUJ1SsF16AH0YJQJTYlF+FsQxOVtyVseBJhIrV5wG4uSo1yEPCbOF0TFccPGq9qDP8Ikyvw065a1HQqD4uLgsF+rRShE5ZGyratmrAfikvg8eYPidrl726cm9zXRowk3yXv/yq2mrqs+wsUw5bGVAD44iqnaeDcoEi0kFOU9ZPIRm7Cgm35cenBYeEpb9A0drVVcSvDKtQOST8ffwCQhUakWUVZjJvFsLqVuKGZRVmCD2WH8mqqgH3VjrYK0Qfo2RiGn/HsiJCllWY7ZkyESpWNb5mwEiYBiydekcyqknA5yyT9HsItWp6bwzBWiH6NDbblwRVAHaZxka0E9m+xawiOWUK98T+k8NGWMlCfGdahop2aEKG1DuUWUUNtWScpYcdYZbUW6koIi7YCJUsIdOXaIufB3TbjF4wQ8iSmFZTX5TuQMX6JsLg5w+J1ct0q1PK7Mywpd7o/66AsOhm0xFCtsRUYEJii5SRUBOXMPtUAcbEVGDC7E33/zyhw5h6C0yY3ccv3/WWhLwJiQM1TJmDwITkkSGmxFQS8iPUgiwgW2IqLqHy7xNmfanz7/nS4DtMKDJhJvVmLC2EJjztLMZ5ECqpexLYujSCE6bmqfOb+TuEJvzafmJdhOITJokNW+F0HoRhyHCYF+E5EGpBp+OfACg+YehRT7tcfMITJQkloSSUhJJQEkpCSSgJCxKaPBGrIHTfFxr8WIEqAI0KCJHqg5ftFe3pAj/JZwUf1T2vp757CQyjuhmraYaxHFSGl1AO3rdKJZRodi52nB63VN/0523D+kFMZD3ts8/3lm7XHfxdKleWcWIBD9JZ2turIM9WcDe7eVszw1n7HZxa+FXKp3DP5HE3g4/5ItCsU0BDOCNYvAlHt5d7vem/z7eBZSF3W2aJhmiW0V6+767P4jFurtt93X28fQbGlRXCIlr88KiM0L+i9yzrymwvX/qvXUFWXUnVu5sBon1/my8/PxfbdqTtdvG5nL+9f+xeB3+4PwBDSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkrqh/UfJkbbBSWHqnQAAAAASUVORK5CYII=" alt="user photo">
+                </button>
+              </div>
+              <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+                <div class="px-4 py-3" role="none">
+                  <p class="text-sm text-gray-900 dark:text-white" role="none">
+                    Neil Sims
+                  </p>
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                    neil.sims@flowbite.com
+                  </p>
+                </div>
+                <ul class="py-1" role="none">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </nav>
+  
+  <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+        <ul class="space-y-2 font-medium">
+           <li>
+              <a href="/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                 <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                    <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                    <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                 </svg>
+                 <span class="ml-3">Dashboard</span>
+              </a>
+           </li>
+           <li>
+            
+            <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                  <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                     <path d="M17 16h-1V2a1 1 0 1 0 0-2H2a1 1 0 0 0 0 2v14H1a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM5 4a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4Zm0 5V8a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1Zm6 7H7v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm2-7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1Zm0-4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1Z"/>
+                  </svg>
+                  
+                  <span class="flex-1 ml-3 text-left whitespace-nowrap">Hoteles</span>
+               
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+            </button>
+            <ul id="dropdown-example" class=" py-2 space-y-2">
+                  <li>
+                     <a href="/ListHotel/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Listar</a>
+                  </li>
+                  <li>
+                     <a href="/CreateHotel/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Crear</a>
+                  </li>
+                  <li>
+                     <a href="/EditHotel/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Editar</a>
+                  </li>
+                  <li>
+                    <a href="/SearchHotel/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Mostrar</a>
+                 </li>
+                 <li>
+                    <a href="/DeleteHotel/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Eliminar</a>
+                 </li>
+            </ul>
+
+            <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                  <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+               </svg>
+                <span class="flex-1 ml-3 text-left whitespace-nowrap">Habitaciones</span>
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+          </button>
+          <ul id="dropdown-example" class=" py-2 space-y-2">
+            <li>
+                <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Listar</a>
+             </li>
+             <li>
+                <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Crear</a>
+             </li>
+             <li>
+                <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Editar</a>
+             </li>
+             <li>
+               <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Mostrar</a>
+            </li>
+            <li>
+               <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Eliminar</a>
+            </li>
+          </ul>
+
+          <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+               <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+               <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>            </svg>
+            <span class="flex-1 ml-3 text-left whitespace-nowrap">Informes</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+      </button>
+      <ul id="dropdown-example" class=" py-2 space-y-2">
+            <li>
+               <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Total Habitaciones</a>
+            </li>
+            <li>
+               <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Total Acomodaciones</a>
+            </li>
+      </ul>
+         </li>
+           
+        </ul>
+     </div>
+  </aside>
+  
+  
